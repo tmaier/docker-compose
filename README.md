@@ -8,7 +8,11 @@
 This docker image installs docker-compose on top of the `docker` image.
 This is very usefull for CI pipelines, which leverage "Docker in Docker".
 
-There are versions based on different docker versions, e.g. `latest`, `17.03`, `1.13` and `1.12`.
+## Docker versions supported
+
+There are versions based on different docker versions, e.g. `latest`, `17.06`, `17.03` and `1.13`.
+
+Please open an issue or a pull request (preferred) [at GitHub](https://github.com/tmaier/docker-compose), if a version is missing.
 
 ## Author
 

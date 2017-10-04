@@ -14,6 +14,26 @@ There are versions based on different docker versions, e.g. `latest`, `17.06`, `
 
 Please open an issue or a pull request (preferred) [at GitHub](https://github.com/tmaier/docker-compose), if a version is missing.
 
+## Usage instructions for GitLab CI
+
+You may use it like this in your `.gitlab-ci.yml` file.
+
+```yaml
+image: tmaier/docker-compose:latest
+
+services:
+  - docker:dind
+
+before_script:
+  - docker info
+  - docker-compose --version
+
+build image:
+  stage: build
+  script:
+    - docker-compose build
+```
+
 ## Author
 
 [Tobias L. Maier](http://tobiasmaier.info) for [BauCloud GmbH](https://www.baucloud.com)

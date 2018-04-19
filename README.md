@@ -6,11 +6,13 @@
 [![GitHub stars](https://img.shields.io/github/stars/tmaier/docker-compose.svg?style=social&label=Star)](https://github.com/tmaier/docker-compose)
 
 This docker image installs docker-compose on top of the `docker` image.
-This is very usefull for CI pipelines, which leverage "Docker in Docker".
+This is very useful for CI pipelines, which leverage "Docker in Docker".
 
 ## Docker versions supported
 
 There are versions based on different docker versions, e.g. `latest`, `17.06`, `17.03` and `1.13`.
+
+docker-compose matches the latest minor version available when the docker release was made. Eg, `17.06` includes docker-compose 1.15.0. The `latest` tag always includes the latest docker-compose build.
 
 Please open an issue or a pull request (preferred) [at GitHub](https://github.com/tmaier/docker-compose), if a version is missing.
 

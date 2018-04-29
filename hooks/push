@@ -2,7 +2,6 @@
 
 set -e
 
-
 while read -r docker_version compose_version;
 do
   image=${DOCKER_REPO}:${docker_version}

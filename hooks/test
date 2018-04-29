@@ -2,8 +2,6 @@
 
 set -e
 
-echo "Test Hook is starting"
-
 while read -r docker_version compose_version;
 do
   image=${DOCKER_REPO}:${docker_version}

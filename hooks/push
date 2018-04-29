@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -ex
+
+while read -r docker_version _;
+do
+  image=${DOCKER_REPO}:${docker_version}
+  echo "# Pushing image ${image}..."
+
+  docker image push "${image}"
+done < DOCKER_AND_COMPOSE_VERSION_MATRIX

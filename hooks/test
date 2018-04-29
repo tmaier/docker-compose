@@ -6,7 +6,14 @@ while read -r docker_version _;
 do
   image=${DOCKER_REPO}:${docker_version}
   echo "# Testing image ${image}..."
-  export IMAGE_NAME=${image};
+  export IMAGE_NAME="${image}"
 
-  docker-compose -f docker-compose.test.yml run --rm sut
+  container=$(docker-compose -f docker-compose.test.yml run -d sut)
+
+  if [ "$(docker container wait "${container}")" != "0" ]
+  then
+    echo "Test of ${IMAGE_NAME} failed"
+    exit 1
+  fi
+  docker-compose -f docker-compose.test.yml rm --force sut
 done < DOCKER_AND_COMPOSE_VERSION_MATRIX

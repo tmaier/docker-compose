@@ -6,6 +6,7 @@ images=$(docker image ls "${DOCKER_REPO}" --format "{{.Repository}}:{{.Tag}}");
 
 for image in ${images};
 do
+  echo "# Testing image ${image}..."
   export IMAGE_NAME=${image};
   docker-compose -f docker-compose.test.yml --rm run sut
 done

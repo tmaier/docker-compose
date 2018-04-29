@@ -6,5 +6,6 @@ images=$(docker image ls "${DOCKER_REPO}" --format "{{.Repository}}:{{.Tag}}");
 
 for image in ${images};
 do
+  echo "# Pushing image ${image}..."
   docker image push "${image}"
 done

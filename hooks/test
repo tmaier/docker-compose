@@ -2,7 +2,7 @@
 
 set -e
 
-images=`docker image ls ${DOCKER_REPO} --format "{{.Repository}}:{{.Tag}}"`;
+images=$(docker image ls "${DOCKER_REPO}" --format "{{.Repository}}:{{.Tag}}");
 
 for image in ${images};
 do

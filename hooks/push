@@ -2,13 +2,11 @@
 
 set -e
 
-docker image ls "${DOCKER_REPO}" --format "{{.Repository}}:{{.Tag}}"
 
-images=$(docker image ls "${DOCKER_REPO}" --format "{{.Repository}}:{{.Tag}}");
-
-for image in ${images};
+while read -r docker_version compose_version;
 do
+  image=${DOCKER_REPO}:${docker_version}
   echo "# Pushing image ${image}..."
+
   docker image push "${image}"
-  echo "Exit code: $?"
-done
+done < DOCKER_AND_COMPOSE_VERSION_MATRIX

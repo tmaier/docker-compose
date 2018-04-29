@@ -4,14 +4,11 @@ set -e
 
 echo "Test Hook is starting"
 
-docker image ls "${DOCKER_REPO}" --format "{{.Repository}}:{{.Tag}}"
-
-images=$(docker image ls "${DOCKER_REPO}" --format "{{.Repository}}:{{.Tag}}");
-
-for image in ${images};
+while read -r docker_version compose_version;
 do
+  image=${DOCKER_REPO}:${docker_version}
   echo "# Testing image ${image}..."
   export IMAGE_NAME=${image};
+
   docker-compose -f docker-compose.test.yml --rm run sut
-  echo "Exit code: $?"
-done
+done < DOCKER_AND_COMPOSE_VERSION_MATRIX

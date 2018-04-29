@@ -1,0 +1,5 @@
+version: '3'
+services:
+  sut:
+    image: ${IMAGE_NAME}
+    command: docker-compose version

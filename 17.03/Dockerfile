@@ -2,6 +2,7 @@ ARG DOCKER_VERSION=17.03
 FROM docker:${DOCKER_VERSION}
 
 ARG COMPOSE_VERSION=1.11.*
+ARG DOCKER_VERSION
 
 RUN apk add --no-cache py-pip
 RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
@@ -12,4 +13,5 @@ LABEL \
   org.opencontainers.image.licenses="MIT" \
   org.opencontainers.image.source="https://github.com/tmaier/docker-compose" \
   org.opencontainers.image.title="Docker Compose on docker base image" \
-  org.opencontainers.image.vendor="BauCloud GmbH"
+  org.opencontainers.image.vendor="BauCloud GmbH" \
+  org.opencontainers.image.version="${DOCKER_VERSION} with docker-compose ${COMPOSE_VERSION}"

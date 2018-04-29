@@ -2,7 +2,7 @@
 
 set -ex
 
-while read -r docker_version compose_version;
+while read -r docker_version _;
 do
   image=${DOCKER_REPO}:${docker_version}
   echo "# Testing image ${image}..."

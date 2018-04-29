@@ -1,4 +1,5 @@
-FROM docker:1.12
+ARG DOCKER_VERSION=1.12
+FROM docker:${DOCKER_VERSION}
 MAINTAINER Tobias Maier <tobias.maier@baucloud.com>
 
 ARG COMPOSE_VERSION=1.8.*

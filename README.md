@@ -14,6 +14,8 @@ There are versions based on different docker versions, e.g. `latest`, `17.06`, `
 
 docker-compose matches the latest minor version available when the docker release was made. Eg, `17.06` includes docker-compose 1.15.0. The `latest` tag always includes the latest docker-compose build.
 
+All available Docker Engine versions and the respective Docker Compose versions are defined in [`DOCKER_AND_COMPOSE_VERSION_MATRIX`](./DOCKER_AND_COMPOSE_VERSION_MATRIX).
+
 Please open an issue or a pull request (preferred) [at GitHub](https://github.com/tmaier/docker-compose), if a version is missing.
 
 ## Usage instructions for GitLab CI

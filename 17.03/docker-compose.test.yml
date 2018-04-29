@@ -1,5 +1,5 @@
 version: '3'
 services:
   sut:
-    build: ${BUILD_PATH}
+    build: .
     command: docker-compose version

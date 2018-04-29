@@ -1,0 +1,11 @@
+#!/usr/bin/env sh
+
+set -e
+
+while read docker_version compose_version;
+do
+  docker build \
+    --build-arg DOCKER_VERSION=${docker_version} \
+    --build-arg COMPOSE_VERSION=${compose_version} \
+    -t $DOCKER_REPO:${docker_version} .
+done < DOCKER_AND_COMPOSE_VERSION_MATRIX

@@ -5,8 +5,9 @@ set -e
 while read -r docker_version compose_version;
 do
   echo "# Building image ${image}..."
+  image=${DOCKER_REPO}:${docker_version}
   docker build \
     --build-arg DOCKER_VERSION="${docker_version}" \
     --build-arg COMPOSE_VERSION="${compose_version}" \
-    -t "${DOCKER_REPO}:${docker_version}" .
+    -t "${image}" .
 done < DOCKER_AND_COMPOSE_VERSION_MATRIX

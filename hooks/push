@@ -8,4 +8,5 @@ for image in ${images};
 do
   echo "# Pushing image ${image}..."
   docker image push "${image}"
+  echo "Exit code: $?"
 done

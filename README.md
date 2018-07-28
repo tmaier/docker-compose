@@ -38,6 +38,17 @@ build image:
     - docker-compose build
 ```
 
+## How to add support for a new docker version to this repository?
+
+You must only provide a Pull Request for the file [`DOCKER_AND_COMPOSE_VERSION_MATRIX`](./DOCKER_AND_COMPOSE_VERSION_MATRIX).
+
+`DOCKER_AND_COMPOSE_VERSION_MATRIX` specifies in the first column the docker version. 
+The second column states the most recent release of docker-compose when the docker version has been released.
+
+You can see the latest matching versions of both by checking their release notes:
+* https://github.com/docker/docker-ce/releases
+* https://github.com/docker/compose/releases
+
 ## Author
 
 [Tobias L. Maier](http://tobiasmaier.info) for [BauCloud GmbH](https://www.baucloud.com)

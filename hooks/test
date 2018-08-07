@@ -2,9 +2,9 @@
 
 set -ex
 
-while read -r docker_version _;
+while read -r docker_version _ image_type;
 do
-  image=${DOCKER_REPO}:${docker_version}
+  image=${DOCKER_REPO}:${docker_version}$([ ! -z "${image_type}" ] && echo "-${image_type}" || echo "")
   echo "# Testing image ${image}..."
   export IMAGE_NAME="${image}"
 

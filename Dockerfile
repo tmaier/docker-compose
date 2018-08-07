@@ -1,11 +1,33 @@
 ARG DOCKER_VERSION=latest
 FROM docker:${DOCKER_VERSION}
 
-ARG COMPOSE_VERSION=
-ARG DOCKER_VERSION
+ARG COMPOSE_VERSION
+ARG IMAGE_TYPE="slim"
+ARG DOCKER_VERSI
 
-RUN apk add --no-cache py-pip
-RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
+RUN apk add --no-cache \
+  py-pip && \
+  if [[ "${IMAGE_TYPE}" == "fat" ]]; then \
+  apk add --no-cache \
+    bash \
+    ca-certificates \
+    git \
+    perl \
+    openssh-client \
+    curl \
+    git \
+    gnupg \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+    ; fi
+
+RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" && \
+    if [[ "${IMAGE_TYPE}" == "fat" ]]; then \
+    pip install awscli awsebcli \
+    ; fi
+
 
 LABEL \
   org.opencontainers.image.authors="Tobias Maier <tobias.maier@baucloud.com>" \

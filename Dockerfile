@@ -4,8 +4,8 @@ FROM docker:${DOCKER_VERSION}
 ARG COMPOSE_VERSION=
 ARG DOCKER_VERSION
 
-RUN apk add --no-cache py-pip
-RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
+RUN apk add --no-cache py3-pip
+RUN pip3 install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
 
 LABEL \
   org.opencontainers.image.authors="Tobias Maier <tobias.maier@baucloud.com>" \

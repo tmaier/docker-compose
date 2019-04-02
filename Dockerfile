@@ -23,7 +23,9 @@ RUN apk add --no-cache \
     build-base \
     openjdk8 \
     libffi \
-    libff-dev \
+    libffi-dev \
+    openssl \
+    openssl-dev \
     ; fi
 
 RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" && \

@@ -22,6 +22,10 @@ RUN apk add --no-cache \
     py-pip \
     build-base \
     openjdk8 \
+    make \
+    cmake \
+    gcc \
+    g++ \
     ; fi
 
 RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" && \

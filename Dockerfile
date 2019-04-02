@@ -25,7 +25,7 @@ RUN apk add --no-cache \
 
 RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" && \
     if [[ "${IMAGE_TYPE}" == "fat" ]]; then \
-    pip install awscli awsebcli \
+    pip install awscli awsebcli direnv pipenv \
     ; fi
 
 

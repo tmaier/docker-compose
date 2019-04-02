@@ -3,36 +3,37 @@ FROM docker:${DOCKER_VERSION}
 
 ARG COMPOSE_VERSION
 ARG IMAGE_TYPE="slim"
-ARG DOCKER_VERSI
 
 RUN apk add --no-cache \
-  py-pip && \
+  python \
+  py-pip \
+  libffi \
+  && \
+  apk add --no-cache --virtual .build-deps \
+  build-base \
+  libffi-dev \
+  python-dev \
+  openssl-dev \
+  && \
   if [[ "${IMAGE_TYPE}" == "fat" ]]; then \
-  apk add --no-cache \
+    apk add --no-cache \
     bash \
     ca-certificates \
     git \
     perl \
     openssh-client \
     curl \
-    git \
     gnupg \
-    python \
-    python-dev \
-    py-pip \
-    build-base \
     openjdk8 \
-    libffi \
-    libffi-dev \
     openssl \
-    openssl-dev \
-    ; fi
-
-RUN pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" && \
-    if [[ "${IMAGE_TYPE}" == "fat" ]]; then \
+  ; fi \
+  && \
+  pip install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" \
+  && \
+  if [[ "${IMAGE_TYPE}" == "fat" ]]; then \
     pip install awscli awsebcli direnv pipenv \
-    ; fi
-
+  ; fi && \
+  apk del .build-deps
 
 LABEL \
   org.opencontainers.image.authors="Tobias Maier <tobias.maier@baucloud.com>" \

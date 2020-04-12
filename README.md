@@ -52,7 +52,7 @@ You can see the latest matching versions of both by checking their release notes
 
 ## Common issues and possible fixes
 
-1. `ERROR: error during connect: Get http://docker:2375/v1.40/info: dial tcp: ...`
+### `ERROR: error during connect: Get http://docker:2375/v1.40/info: dial tcp: ...`
 
 > As of version 19.03, docker:dind will automatically generate TLS certificates and require using them for communication.
 

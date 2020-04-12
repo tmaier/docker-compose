@@ -49,6 +49,15 @@ You can see the latest matching versions of both by checking their release notes
 * https://github.com/docker/docker-ce/releases
 * https://github.com/docker/compose/releases
 
+
+## Common issues and possible fixes
+
+1. `ERROR: error during connect: Get http://docker:2375/v1.40/info: dial tcp: ...`
+
+> As of version 19.03, docker:dind will automatically generate TLS certificates and require using them for communication.
+
+See <https://github.com/tmaier/docker-compose/issues/21#issuecomment-578780163>
+
 ## Author
 
 [Tobias L. Maier](http://tobiasmaier.info) for [BauCloud GmbH](https://www.baucloud.com)

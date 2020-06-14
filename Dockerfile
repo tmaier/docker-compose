@@ -4,7 +4,7 @@ FROM docker:${DOCKER_VERSION}
 ARG COMPOSE_VERSION=
 ARG DOCKER_VERSION
 
-RUN apk add --no-cache "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}"
+RUN apk add --no-cache "docker-compose${COMPOSE_VERSION:+=}${COMPOSE_VERSION}"
 
 LABEL \
   org.opencontainers.image.authors="Tobias Maier <tobias.maier@baucloud.com>" \

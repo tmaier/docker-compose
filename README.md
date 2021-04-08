@@ -10,9 +10,9 @@ This is very useful for CI pipelines, which leverage "Docker in Docker".
 
 ## Docker versions supported
 
-There are versions based on different docker versions, e.g. `latest`, `17.06`, `17.03` and `1.13`.
+There are versions based on different docker versions, e.g. `latest`, `20.10`, `19.03` and `1.13`.
 
-docker-compose matches the latest minor version available when the docker release was made. Eg, `17.06` includes docker-compose 1.15.0. The `latest` tag always includes the latest docker-compose build.
+docker-compose matches the latest minor version available when the docker release was made. Eg, `19.03` includes docker-compose 1.27.4. The `latest` tag always includes the latest docker-compose build.
 
 All available Docker Engine versions and the respective Docker Compose versions are defined in [`DOCKER_AND_COMPOSE_VERSION_MATRIX`](./DOCKER_AND_COMPOSE_VERSION_MATRIX).
 
@@ -42,13 +42,13 @@ build image:
 
 You must only provide a Pull Request for the file [`DOCKER_AND_COMPOSE_VERSION_MATRIX`](./DOCKER_AND_COMPOSE_VERSION_MATRIX).
 
-`DOCKER_AND_COMPOSE_VERSION_MATRIX` specifies in the first column the docker version. 
+`DOCKER_AND_COMPOSE_VERSION_MATRIX` specifies in the first column the docker version.
 The second column states the most recent release of docker-compose when the docker version has been released.
 
 You can see the latest matching versions of both by checking their release notes:
-* https://github.com/docker/docker-ce/releases
-* https://github.com/docker/compose/releases
 
+- https://github.com/docker/docker-ce/releases
+- https://github.com/docker/compose/releases
 
 ## Common issues and possible fixes
 

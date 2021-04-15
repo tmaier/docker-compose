@@ -5,11 +5,9 @@ ARG COMPOSE_VERSION=
 ARG DOCKER_VERSION
 
 RUN apk add --no-cache py3-pip python3
-RUN apk add --no-cache --virtual build-dependencies python3-dev libffi-dev openssl-dev gcc libc-dev make \
-  && apk add --no-cache --virtual build-dependencies-after-compose-v1.28.x rust cargo || true \
+RUN apk add --no-cache --virtual build-dependencies python3-dev libffi-dev openssl-dev gcc libc-dev rust cargo make \
   && pip3 install "docker-compose${COMPOSE_VERSION:+==}${COMPOSE_VERSION}" \
-  && apk del build-dependencies \
-  && apk del build-dependencies-after-compose-v1.28.x || true
+  && apk del build-dependencies
 
 LABEL \
   org.opencontainers.image.authors="Tobias Maier <tobias.maier@baucloud.com>" \

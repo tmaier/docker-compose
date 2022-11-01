@@ -10,14 +10,14 @@ This is very useful for CI pipelines, which leverage "Docker in Docker".
 
 ## Docker versions supported
 
-Note: In the past. this docker image (tags) focused on the docker version (e.g. `latest`, `20.10`, `19.03` and `19`).
-But as the docker releases got less disruptive, the approach changes to use the docker compose version as tags.
-
 The Docker Compose versions supported here use the most recent docker version compatible with it.
 
 All available Docker Engine versions and the respective Docker Compose versions are defined in [`DOCKER_AND_COMPOSE_VERSION_MATRIX`](./DOCKER_AND_COMPOSE_VERSION_MATRIX).
 
 Please open an issue or a pull request (preferred) [at GitHub](https://github.com/tmaier/docker-compose), if a version is missing.
+
+**Note:** In the past. this docker image (tags) focused on the docker version (e.g. `latest`, `20.10`, `19.03` and `19`).
+But as the docker releases got less disruptive, the approach changes to use the docker compose version as tags.
 
 ## Usage instructions for GitLab CI
 

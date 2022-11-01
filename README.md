@@ -47,7 +47,7 @@ The second column states the most recent release of docker-compose when the dock
 
 You can see the latest matching versions of both by checking their release notes:
 
-- https://github.com/docker/docker-ce/releases
+- https://github.com/docker/docker-ce/releases or https://hub.docker.com/_/docker
 - https://github.com/docker/compose/releases
 
 ## Common issues and possible fixes

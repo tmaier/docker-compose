@@ -1,6 +1,6 @@
 # Docker Compose
 
-[![Docker Automated buil](https://img.shields.io/docker/automated/tmaier/docker-compose.svg)](https://hub.docker.com/r/tmaier/docker-compose/)
+[![Docker Automated build](https://img.shields.io/docker/automated/tmaier/docker-compose.svg)](https://hub.docker.com/r/tmaier/docker-compose/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tmaier/docker-compose.svg)](https://hub.docker.com/r/tmaier/docker-compose/)
 [![GitHub issues](https://img.shields.io/github/issues/tmaier/docker-compose.svg)](https://github.com/tmaier/docker-compose/issues)
 [![GitHub stars](https://img.shields.io/github/stars/tmaier/docker-compose.svg?style=social&label=Star)](https://github.com/tmaier/docker-compose)
@@ -12,7 +12,8 @@ This is very useful for CI pipelines, which leverage "Docker in Docker".
 
 There are versions based on different docker versions, e.g. `latest`, `20.10`, `19.03` and `19`.
 
-docker-compose matches the latest minor version available when the docker release was made. Eg, `19.03` includes docker-compose 1.27.4. The `latest` tag always includes the latest docker-compose build.
+docker-compose matches the latest version compatible with the respective docker release.
+Eg, `20.10` includes docker-compose 1.27.4. The `latest` tag always includes the latest docker-compose build.
 
 All available Docker Engine versions and the respective Docker Compose versions are defined in [`DOCKER_AND_COMPOSE_VERSION_MATRIX`](./DOCKER_AND_COMPOSE_VERSION_MATRIX).
 

@@ -4,6 +4,8 @@ FROM docker:${DOCKER_VERSION}
 ARG COMPOSE_VERSION=
 ARG DOCKER_VERSION
 
+ENV PATH /usr/bin:$PATH
+
 RUN apk add --no-cache py3-pip python3
 RUN apk add --no-cache --virtual \
   build-dependencies \

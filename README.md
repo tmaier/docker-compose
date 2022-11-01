@@ -8,6 +8,11 @@
 This docker image installs docker-compose on top of the `docker` image.
 This is very useful for CI pipelines, which leverage "Docker in Docker".
 
+## This Docker image is DEPRECATED
+
+This image is deprecated, since the `docker` has now Docker Compose included.
+This has been introduced by [docker-library/docker#361](https://github.com/docker-library/docker/pull/361).
+
 ## Docker versions supported
 
 The Docker Compose versions supported here use the most recent docker version compatible with it.

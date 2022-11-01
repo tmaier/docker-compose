@@ -10,10 +10,10 @@ This is very useful for CI pipelines, which leverage "Docker in Docker".
 
 ## Docker versions supported
 
-There are versions based on different docker versions, e.g. `latest`, `20.10`, `19.03` and `19`.
+Note: In the past. this docker image (tags) focused on the docker version (e.g. `latest`, `20.10`, `19.03` and `19`).
+But as the docker releases got less disruptive, the approach changes to use the docker compose version as tags.
 
-docker-compose matches the latest version compatible with the respective docker release.
-Eg, `20.10` includes docker-compose 1.27.4. The `latest` tag always includes the latest docker-compose build.
+The Docker Compose versions supported here use the most recent docker version compatible with it.
 
 All available Docker Engine versions and the respective Docker Compose versions are defined in [`DOCKER_AND_COMPOSE_VERSION_MATRIX`](./DOCKER_AND_COMPOSE_VERSION_MATRIX).
 

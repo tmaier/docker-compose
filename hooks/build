@@ -1,10 +1,17 @@
 #!/usr/bin/env sh
 
-set -ex
+set -e
 
 while read -r docker_version compose_version;
 do
-  image=${DOCKER_REPO}:${docker_version}
+  if [ -z "${compose_version}" ]
+  then
+    tag="latest"
+  else
+    tag="${compose_version%.*}"
+  fi
+  image=${DOCKER_REPO}:${tag}
+
   echo "# Building image ${image}..."
 
   docker build \
